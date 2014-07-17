@@ -1,5 +1,5 @@
 #bob
-
+s
 bob is a command-line client for managing dokku applications.
 It is a very thin client, defining no local commands and instead
 passing them on to the dokku server.
@@ -27,3 +27,6 @@ For eg to add a config option to your dokku application, just run:
     bob config:set VAR1=hello VAR2=world
 
 To see a full list of available commands, just run `bob help`, which is actually equivalent to `ssh dokku@server help`
+
+##Licence
+bob is licenced under the [MIT Licence](http://nemo.mit-license.org).

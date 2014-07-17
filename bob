@@ -1,0 +1,18 @@
+#!/bin/sh
+REMOTE_NAME="dokku"
+REMOTE_PATH=`git ls-remote --get-url $REMOTE_NAME`
+
+# Raise error if you can't find the dokku remote
+if [ "$REMOTE_PATH" = "$REMOTE_NAME" ]; then
+  echo "bob: no remote called $REMOTE_NAME found"
+  echo "See https://github.com/captn3m0/bob for more information"
+  exit 1
+fi
+
+SSH_URL=`echo $REMOTE_PATH |cut -d: -f1`
+APP_NAME=`echo $REMOTE_PATH |cut -d: -f2`
+
+# Now we run the ssh command for the app
+COMMAND=$1
+shift
+ssh $SSH_URL $COMMAND $APP_NAME $@
