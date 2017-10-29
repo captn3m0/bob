@@ -1,22 +1,22 @@
-#bob
+# bob
 
 bob is a command-line client for managing dokku applications.
 It is a very thin client, defining no local commands and instead
 passing them on to the dokku server.
 
-##Installation
+## Installation
 Just put the bob executable anywhere in your $PATH, such as ~/bin.
 
-##Requirements
+## Requirements
 Bob needs the following to work:
 
     - git (>=1.7.5)
     - A remote named `dokku` setup in your git config
 
-##Working
+## Working
 Bob reads the dokku remote using git, parses it to get the dokku hostname (and username) and appname. Then any commands are passed to the dokku server with the correct appname. *Note*: This may result in some invalid commands. 
 
-##Commands
+## Commands
 The following two commands are equivalent:
 
     ssh dokku@server <command> app [args]
@@ -30,7 +30,7 @@ To see a full list of available commands, just run `bob help`, which is actually
 
 **Note**: Since bob is just a thin client, it has no way of differentiating between various kinds of dokku commands, and the [app] parameter is always sent to the server as the second argument. This means that not all commands are compatible with bob.
 
-##Valid commands
+## Valid commands
 
 This is a list of commands known to work with bob (Basically those where the first argument is <app> or if the command accepts no arguments).
 
@@ -57,5 +57,5 @@ This is a list of commands known to work with bob (Basically those where the fir
     url                                       Show the URL for current application
     version                                   Print dokku's version
 
-##Licence
+## Licence
 bob is licenced under the [MIT Licence](http://nemo.mit-license.org).
